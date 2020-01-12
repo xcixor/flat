@@ -8,4 +8,7 @@ class RoomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Room
-        fields = ['id', 'title', 'description', 'location', 'price', 'room_type']
+        fields = ['id', 'title', 'description', 'location', 'price', 'room_type', 'owner']
+
+    owner = serializers.ReadOnlyField(source='owner.username')
+
