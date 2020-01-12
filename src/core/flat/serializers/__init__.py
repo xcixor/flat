@@ -1,0 +1,1 @@
+from .room_serializers.serializers import RoomSerializer

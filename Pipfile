@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "==2.2.5"
 djangorestframework = "==3.11.0"
+psycopg2 = "==2.8.4"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
