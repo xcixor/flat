@@ -3,12 +3,14 @@ from rest_framework import serializers
 from flat.models.room_models.models import Room, ROOM_CHOICES
 
 
-class RoomSerializer(serializers.ModelSerializer):
+class RoomSerializer(serializers.HyperlinkedModelSerializer):
     """Room instance serializer."""
 
     class Meta:
         model = Room
-        fields = ['id', 'title', 'description', 'location', 'price', 'room_type', 'owner']
+        fields = [
+            'url', 'id', 'title', 'description',
+            'location', 'price', 'room_type', 'owner'
+            ]
 
     owner = serializers.ReadOnlyField(source='owner.username')
-

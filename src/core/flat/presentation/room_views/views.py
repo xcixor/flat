@@ -1,6 +1,7 @@
 """Contains room related views."""
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework import renderers
 from flat.models import Room
 from flat.serializers import RoomSerializer
 from flat.permissions import IsOwnerOrReadOnly
@@ -23,4 +24,6 @@ class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
+        ]
