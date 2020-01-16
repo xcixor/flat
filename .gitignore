@@ -3,3 +3,5 @@
 api.http
 *.tfvars*
 *account.json*
+.terraform/
+*staticfiles*
