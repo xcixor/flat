@@ -5,3 +5,4 @@ api.http
 *account.json*
 .terraform/
 *staticfiles*
+*src/core/core/static*
