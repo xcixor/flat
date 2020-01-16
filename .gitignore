@@ -1,3 +1,5 @@
 .env
 *pycache*
 api.http
+*.tfvars*
+*account.json*
