@@ -26,11 +26,19 @@ get_required_variables () {
     export ADMIN="$(get_var "admin")"
     export ADMIN_PASSWORD="$(get_var "admin_password")"
     export ADMIN_EMAIL="$(get_var "admin_email")"
+    export GS_BUCKET_NAME="$(get_var "gs_bucket")"
+    export GS_BUCKET_URL="$(get_var "gs_bucket_url")"
+    export GOOGLE_APPLICATION_CREDENTIALS="/usr/local/gs-account/account.json"
 }
 
 install_postgres(){
     sudo apt-get update
     sudo apt-get install postgresql postgresql-contrib
+}
+
+create_service_account(){
+    mkdir /usr/local/gs-account
+    echo "${SERVICE_ACCOUNT}" > /usr/local/gs-account/account.json
 }
 
 configure_postgres_db(){
@@ -85,6 +93,7 @@ main (){
     # install_postgres
     # configure_postgres_db
     clone_repository
+    create_service_account
     copy_nginx_conf
     copy_supervisord_conf
     configure_pelly_website

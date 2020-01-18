@@ -10,7 +10,7 @@ class RoomSerializer(serializers.HyperlinkedModelSerializer):
         model = Room
         fields = [
             'url', 'id', 'title', 'description',
-            'location', 'price', 'room_type', 'owner'
+            'location', 'price', 'room_type', 'owner', 'image'
             ]
 
     owner = serializers.ReadOnlyField(source='owner.username')
