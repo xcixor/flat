@@ -36,6 +36,11 @@ install_postgres(){
     sudo apt-get install postgresql postgresql-contrib
 }
 
+create_service_account(){
+    mkdir /usr/local/gs-account
+    echo "${SERVICE_ACCOUNT}" > /usr/local/gs-account/account.json
+}
+
 configure_postgres_db(){
     sudo su postgres
     psql
@@ -88,6 +93,7 @@ main (){
     # install_postgres
     # configure_postgres_db
     clone_repository
+    create_service_account
     copy_nginx_conf
     copy_supervisord_conf
     configure_pelly_website

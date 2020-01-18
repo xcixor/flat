@@ -6,3 +6,4 @@ api.http
 .terraform/
 *staticfiles*
 *static*
+src/core/core/media/
