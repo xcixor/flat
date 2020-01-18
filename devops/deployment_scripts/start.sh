@@ -12,7 +12,7 @@ get_var() {
 }
 
 get_required_variables () {
-    export IP_ADDRESS="$(get_var "ip_address")"
+        export IP_ADDRESS="$(get_var "ip_address")"
     ENVIRONMENT="$(get_var "django_environment")"
     export DJANGO_SETTINGS_MODULE=core.settings.${ENVIRONMENT}
     export SECRET_KEY="$(sudo openssl rand -hex 64)"
@@ -24,6 +24,12 @@ get_required_variables () {
     export GITHUB_BRANCH="$(get_var "github_branch")"
     export NGINX_SERVER_NAME="${APPLICATION_HOST}"
     export SERVICE_ACCOUNT="$(get_var "gs_credentials")"
+    export ADMIN="$(get_var "admin")"
+    export ADMIN_PASSWORD="$(get_var "admin_password")"
+    export ADMIN_EMAIL="$(get_var "admin_email")"
+    export GS_BUCKET_NAME="$(get_var "gs_bucket")"
+    export GS_BUCKET_URL="$(get_var "gs_bucket_url")"
+    export GOOGLE_APPLICATION_CREDENTIALS="/usr/local/gs-account/account.json"
 }
 
 start_app () {

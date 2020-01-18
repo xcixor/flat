@@ -26,6 +26,9 @@ get_required_variables () {
     export ADMIN="$(get_var "admin")"
     export ADMIN_PASSWORD="$(get_var "admin_password")"
     export ADMIN_EMAIL="$(get_var "admin_email")"
+    export GS_BUCKET_NAME="$(get_var "gs_bucket")"
+    export GS_BUCKET_URL="$(get_var "gs_bucket_url")"
+    export GOOGLE_APPLICATION_CREDENTIALS="/usr/local/gs-account/account.json"
 }
 
 install_postgres(){
