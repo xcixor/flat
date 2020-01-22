@@ -12,6 +12,7 @@ pillow = "*"
 django = "==3.0.2"
 gunicorn = "==20.0.4"
 django-storages = {extras = ["google"],version = "*"}
+django-filter = "*"
 
 [requires]
 python_version = "3.7"
