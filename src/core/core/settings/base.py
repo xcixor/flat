@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'flat.apps.FlatConfig'
+    'flat.apps.FlatConfig',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -123,5 +124,6 @@ STATIC_URL = '/static/'
 APPEND_SLASH = False
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
